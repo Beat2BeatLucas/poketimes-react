@@ -6,6 +6,7 @@ import { BrowserRouter as Router,
 import Home from './components/home';
 import About from './components/about';
 import Contact from './components/contact';
+import Post from './components/post';
 
 class App extends Component {
   
@@ -16,12 +17,14 @@ class App extends Component {
             <Navbar />
             
             <Switch>
+              
               <Route path='/about'>
                 <About />
               </Route>
               <Route path='/contact'>
                 <Contact />
               </Route>
+              <Route path='/:post_id' children={<Post />} />
               <Route path='/'>
                 <Home />
               </Route>
